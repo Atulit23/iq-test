@@ -225,8 +225,10 @@ const QuizApp = () => {
               </button>
               <button
                 onClick={handleNext}
-                //   disabled={currentQuestion === questions.length - 1}
-                className={`nav-button next`}
+                disabled={answers.filter((item, index) => item !== null).length - 1 !== currentQuestion}
+                className={`nav-button next ${
+                    answers.filter((item, index) => item !== null).length - 1 !== currentQuestion ? "disabled" : ""
+                }`}
               >
                 {questions[currentQuestion].submit ? "Submit" : "Next"}
               </button>
