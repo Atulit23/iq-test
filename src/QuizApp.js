@@ -151,6 +151,9 @@ const QuizApp = () => {
 
   const handlePrevious = () => {
     if (currentQuestion > 0) {
+      let answers1 = [...answers]
+      answers1[currentQuestion] = null
+      setAnswers(answers1)
       setCurrentQuestion((curr) => curr - 1);
     }
   };
